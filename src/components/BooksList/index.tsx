@@ -1,6 +1,7 @@
 import React from "react";
 import './style.scss';
 import defaultImg from '../../assets/thumbnail-default.jpg';
+import { useNavigate } from "react-router-dom";
 
 interface BooksListProps {
   booksData: any;
@@ -8,6 +9,12 @@ interface BooksListProps {
 
 const BooksList: React.FC<BooksListProps> = ({ booksData }) => {
   console.log("books : ", booksData);
+	const navigate = useNavigate();
+
+	const handleClick = () =>{
+		navigate("/bookDetail");
+	};
+
   return (
     <>
       {booksData.length > 0 ? (
@@ -15,7 +22,7 @@ const BooksList: React.FC<BooksListProps> = ({ booksData }) => {
           {booksData.map((item: any) => {
             // if (thumbnail != undefined && amount != undefined) {
             return (
-              <div className="card" key={item.id}>
+              <div className="card" key={item.id} onClick={handleClick}>
                 {item?.volumeInfo?.imageLinks?.smallThumbnail ? (
                   <img src={item?.volumeInfo?.imageLinks?.smallThumbnail} alt="" />
                 ) : (
