@@ -5,17 +5,18 @@ import { handleSearch } from "../../services/apis";
 import { useBookContext } from "../../context/BookContext";
 
 function SearchContainer() {
-	// const [booksData, setBooksData] = useState<any>();
+	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const { setBooks } = useBookContext();
 
 	async function handleBooksSearch(searchValue:string) {
 		try {
+			setIsLoading(true);
 			const response = await handleSearch(searchValue);
-			// Handle the response data here
 			console.log(response.data);
 			response?.data?.items?.length && setBooks(response.data.items);
+			setIsLoading(false);
 		} catch (error) {
-			// Handle the error here
+			setIsLoading(false);
 			console.error(error);
 		}
 	}
@@ -25,7 +26,7 @@ function SearchContainer() {
       <div className="bg-image">
         <div className="search-cnt">
           <h1>Find Your Book</h1>
-          <InputCnt handleBooksSearch={handleBooksSearch} />
+          <InputCnt handleBooksSearch={handleBooksSearch} isLoading={isLoading} />
         </div>
       </div>
     </section>

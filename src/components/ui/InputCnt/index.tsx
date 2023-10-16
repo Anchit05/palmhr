@@ -3,9 +3,10 @@ import "./style.scss";
 
 interface InputProps {
   handleBooksSearch: (...args: any[]) => any;
+	isLoading: boolean;
 }
 
-const InputCnt: React.FC<InputProps> = ({ handleBooksSearch }) => {
+const InputCnt: React.FC<InputProps> = ({ handleBooksSearch, isLoading }) => {
   const [inputValue, setInputValue] = useState<string>("");
 
   const handleSearch = (value: string) => {
@@ -15,7 +16,6 @@ const InputCnt: React.FC<InputProps> = ({ handleBooksSearch }) => {
   const handleChange = (event: any) => {
     let value: string = event.target.value;
     setInputValue(value);
-    console.log("value: ", value);
   };
 
 	const handleKeyDown = (event: any) => {
@@ -33,11 +33,17 @@ const InputCnt: React.FC<InputProps> = ({ handleBooksSearch }) => {
         onChange={handleChange}
         onKeyDown={handleKeyDown}
       />
-      <i
-        className="fas fa-search search-icon"
-        aria-hidden="true"
-        onClick={() => handleSearch(inputValue)}
-      ></i>
+			{ isLoading ? (
+					<i className="fas fa-solid fa-spinner fa-spin loading-icon"></i>
+				) : (
+					<i
+						className="fas fa-search search-icon"
+						aria-hidden="true"
+						onClick={() => handleSearch(inputValue)}
+					></i>
+				)
+
+			}
     </div>
   );
 };
