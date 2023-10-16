@@ -1,0 +1,49 @@
+.bg-image {
+  background-image: url("../../assets/bg-image.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+
+.bg-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Adjust the opacity here (0.5 for 50% opacity) */
+}
+
+.search-section {
+  display: grid;
+  height: 500px;
+}
+
+.search-cnt {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  top: 50%;
+  h1 {
+    font-size: 2rem;
+    margin: 0 0 15px 0;
+    color: white;
+  }
+}
+
+@media (max-width: 767px) {
+  .search-cnt {
+    width: 100%;
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+}
