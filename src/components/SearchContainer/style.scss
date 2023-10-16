@@ -39,6 +39,24 @@
   }
 }
 
+.filter-options-cnt{
+	text-align: left;
+	padding-left: 80px;
+	margin-top: 20px;
+	label{
+		padding-right: 10px;
+	}
+	select{
+		width: 100px;
+    height: 35px;
+    border: transparent;
+    border-radius: 6px;
+		cursor: pointer;
+		outline: none;
+		padding: 5px;
+	}
+}
+
 @media (max-width: 767px) {
   .search-cnt {
     width: 100%;
