@@ -1,0 +1,94 @@
+{
+  "kind": "books#volume",
+  "id": "J89cEAAAQBAJ",
+  "etag": "lrXMmqngWq4",
+  "selfLink": "https://www.googleapis.com/books/v1/volumes/J89cEAAAQBAJ",
+  "volumeInfo": {
+    "title": "Beginning ReactJS Foundations Building User Interfaces with ReactJS",
+    "subtitle": "An Approachable Guide",
+    "authors": ["Chris Minnick"],
+    "publisher": "John Wiley & Sons",
+    "publishedDate": "2022-02-03",
+    "description": "Quickly learn the most widely used front-end development language with ease and confidence React JS Foundations: Building User Interfaces with ReactJS - An Approachable Guide walks readers through the fundamental concepts of programming with the explosively popular front-end tool known as React JS. Written by an accomplished full-stack engineer, speaker, and community organizer, React JS Foundations teaches readers how to understand React and how to begin building applications with it. The book: Explains and clarifies technical terminology with relevant and modern examples to assist people new to programming understand the language Helps experienced programmers quickly get up to speed with React Is stocked throughout with practical and applicable examples of day-to-day React work Perfect for beginner, intermediate, and advanced programmers alike, React JS Foundations will quickly bring you up to speed on one of the most useful and widely used front-end languages on the web today. You can start building your first application today.",
+    "industryIdentifiers": [
+      {
+        "type": "ISBN_13",
+        "identifier": "9781119685586"
+      },
+      {
+        "type": "ISBN_10",
+        "identifier": "1119685583"
+      }
+    ],
+    "readingModes": {
+      "text": true,
+      "image": true
+    },
+    "pageCount": 726,
+    "printType": "BOOK",
+    "categories": ["Computers"],
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": false,
+    "contentVersion": "1.1.1.0.preview.3",
+    "panelizationSummary": {
+      "containsEpubBubbles": false,
+      "containsImageBubbles": false
+    },
+    "imageLinks": {
+      "smallThumbnail": "http://books.google.com/books/content?id=J89cEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+      "thumbnail": "http://books.google.com/books/content?id=J89cEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    },
+    "language": "en",
+    "previewLink": "http://books.google.co.in/books?id=J89cEAAAQBAJ&printsec=frontcover&dq=react&hl=&cd=1&source=gbs_api",
+    "infoLink": "https://play.google.com/store/books/details?id=J89cEAAAQBAJ&source=gbs_api",
+    "canonicalVolumeLink": "https://play.google.com/store/books/details?id=J89cEAAAQBAJ"
+  },
+  "saleInfo": {
+    "country": "IN",
+    "saleability": "FOR_SALE",
+    "isEbook": true,
+    "listPrice": {
+      "amount": 4885.2,
+      "currencyCode": "INR"
+    },
+    "retailPrice": {
+      "amount": 4885.2,
+      "currencyCode": "INR"
+    },
+    "buyLink": "https://play.google.com/store/books/details?id=J89cEAAAQBAJ&rdid=book-J89cEAAAQBAJ&rdot=1&source=gbs_api",
+    "offers": [
+      {
+        "finskyOfferType": 1,
+        "listPrice": {
+          "amountInMicros": 4885200000,
+          "currencyCode": "INR"
+        },
+        "retailPrice": {
+          "amountInMicros": 4885200000,
+          "currencyCode": "INR"
+        }
+      }
+    ]
+  },
+  "accessInfo": {
+    "country": "IN",
+    "viewability": "PARTIAL",
+    "embeddable": true,
+    "publicDomain": false,
+    "textToSpeechPermission": "ALLOWED",
+    "epub": {
+      "isAvailable": true,
+      "acsTokenLink": "http://books.google.co.in/books/download/Beginning_ReactJS_Foundations_Building_U-sample-epub.acsm?id=J89cEAAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+    },
+    "pdf": {
+      "isAvailable": true,
+      "acsTokenLink": "http://books.google.co.in/books/download/Beginning_ReactJS_Foundations_Building_U-sample-pdf.acsm?id=J89cEAAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+    },
+    "webReaderLink": "http://play.google.com/books/reader?id=J89cEAAAQBAJ&hl=&source=gbs_api",
+    "accessViewStatus": "SAMPLE",
+    "quoteSharingAllowed": false
+  },
+  "searchInfo": {
+    "textSnippet": "This handy guide includes: Guides to understanding the JavaScript features used by React A step-by-step tutorial in writing your first React application How to write JSX code How to write class and function components How to use advanced ..."
+  }
+}

@@ -34,11 +34,12 @@ const InputCnt: React.FC<InputProps> = ({ handleBooksSearch, isLoading }) => {
         onKeyDown={handleKeyDown}
       />
 			{ isLoading ? (
-					<i className="fas fa-solid fa-spinner fa-spin loading-icon"></i>
+					<i className="fas fa-solid fa-spinner fa-spin loading-icon" data-testid="loading-icon"></i>
 				) : (
 					<i
 						className="fas fa-search search-icon"
 						aria-hidden="true"
+						data-testid="search-icon"
 						onClick={() => handleSearch(inputValue)}
 					></i>
 				)

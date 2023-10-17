@@ -3,22 +3,27 @@ import './style.scss';
 import InputCnt from "../ui/InputCnt";
 import { handleSearch } from "../../services/apis";
 import { useBookContext } from "../../context/BookContext";
+import DropDown from "../ui/DropDown";
 
 function SearchContainer() {
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [filterCriteria, setFilterCriteria] = useState('');
 	const { setBooks } = useBookContext();
 
+	/**
+	 * fetches the bookslist according to the query params
+	 * @param searchValue 
+	 */
 	async function handleBooksSearch(searchValue:string) {
 		try {
 			setIsLoading(true);
 			const response = await handleSearch(searchValue, filterCriteria);
-			console.log(response.data);
 			response?.data?.items?.length && setBooks(response.data.items);
 			setIsLoading(false);
 		} catch (error) {
 			setIsLoading(false);
 			console.error(error);
+			setBooks([]);
 		}
 	}
 
@@ -28,23 +33,7 @@ function SearchContainer() {
         <div className="search-cnt">
           <h1>Find Your Book</h1>
           <InputCnt handleBooksSearch={handleBooksSearch} isLoading={isLoading} />
-					<div className="filter-options-cnt">
-						<label className="white">Filter Options: </label>
-						<select
-							className=""
-							value={filterCriteria}
-							onChange={(e) => setFilterCriteria(e.target.value)}
-						>
-							<option value="">Select Filter</option>
-							<option value="intitle">Title</option>
-							<option value="inauthor">Author</option>
-							<option value="inpublisher">Publisher</option>
-							<option value="subject">Subject</option>
-							<option value="isbn">ISBN</option>
-							<option value="lccn">LCCN</option>
-							<option value="oclc">OCLC</option>
-						</select>
-					</div>
+					<DropDown updateFilter={setFilterCriteria} />
         </div>
       </div>
     </section>

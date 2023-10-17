@@ -2,17 +2,20 @@ import React from "react";
 import './style.scss';
 import defaultImg from '../../assets/thumbnail-default.jpg';
 import { useNavigate } from "react-router-dom";
+import Card from "../ui/Card";
 
 interface BooksListProps {
   booksData: any;
 }
 
 const BooksList: React.FC<BooksListProps> = ({ booksData }) => {
-  console.log("books : ", booksData);
 	const navigate = useNavigate();
 
-	const handleClick = () =>{
-		navigate("/bookDetail");
+	//navigates the card to the details page
+	const handleClick = (itemData: any) =>{
+		if(itemData.selfLink){
+			navigate(`/bookDetail/${itemData.id}`);
+		}
 	};
 
   return (
@@ -20,30 +23,9 @@ const BooksList: React.FC<BooksListProps> = ({ booksData }) => {
       {booksData.length > 0 ? (
         <section className="books-list-container">
           {booksData.map((item: any) => {
-            // if (thumbnail != undefined && amount != undefined) {
             return (
-              <div className="card" key={item.id} onClick={handleClick}>
-                {item?.volumeInfo?.imageLinks?.smallThumbnail ? (
-                  <img src={item?.volumeInfo?.imageLinks?.smallThumbnail} alt="" />
-                ) : (
-                  <img className="default-img" src={defaultImg} alt="No Image" />
-                )}
-                <div className="bottom">
-                  <h3 className="title">{item.volumeInfo.title}</h3>
-									{ item?.saleInfo?.listPrice?.amount ? (
-											<p className="amount">
-												&#8377;{item?.saleInfo?.listPrice?.amount || ""}
-											</p>
-										) : (
-											<p className="no-price">
-												Not mentioned
-											</p>
-										)
-									}
-                </div>
-              </div>
+              <Card cardData={item} key={item.id} handleClick={handleClick} />
             );
-            // }
           })}
         </section>
       ) : (
