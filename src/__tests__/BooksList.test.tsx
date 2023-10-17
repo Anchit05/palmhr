@@ -5,11 +5,13 @@ import BooksList from "../components/BooksList";
 import "@testing-library/jest-dom";
 import mockBooksData from "../__mocks__/booksList.json";
 
+const mockHandleClick = jest.fn();
+
 describe("BooksList Component", () => {
   it("BooksList component renders correctly with books data", () => {
     render(
       <Router>
-        <BooksList booksData={mockBooksData} />
+        <BooksList booksData={mockBooksData} handleLoadMore={mockHandleClick} />
       </Router>
     );
 
@@ -20,7 +22,7 @@ describe("BooksList Component", () => {
   it('BooksList component handles "No results" when there is no data', () => {
     render(
       <Router>
-        <BooksList booksData={[]} />
+        <BooksList booksData={[]} handleLoadMore={mockHandleClick} />
       </Router>
     );
     // Check if the "No results" text is present

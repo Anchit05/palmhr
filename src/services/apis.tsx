@@ -1,14 +1,14 @@
 import axios from "axios";
 const apiUrl = "https://www.googleapis.com/books/v1/volumes";
 
-export async function handleSearch(searchQuery: string, filterCriteria: string) {
+export async function handleSearch(searchQuery: string, filterCriteria: string, startIndex: number) {
   const apiKey = process.env.API_KEY;
 
   // Define the query parameters
   const params = {
     q: filterCriteria ? `${filterCriteria}:${searchQuery}`  : searchQuery,
     maxResults: 20,
-    startIndex: 0,
+    startIndex: startIndex,
     key: apiKey,
   };
 

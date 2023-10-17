@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./style.scss";
 
 interface InputProps {
   handleBooksSearch: (...args: any[]) => any;
 	isLoading: boolean;
+	searchVal: string;
 }
 
-const InputCnt: React.FC<InputProps> = ({ handleBooksSearch, isLoading }) => {
-  const [inputValue, setInputValue] = useState<string>("");
+const InputCnt: React.FC<InputProps> = ({ handleBooksSearch, isLoading, searchVal }) => {
+  const [inputValue, setInputValue] = useState<string>(searchVal || "");
 
   const handleSearch = (value: string) => {
     handleBooksSearch(value);
@@ -32,6 +33,7 @@ const InputCnt: React.FC<InputProps> = ({ handleBooksSearch, isLoading }) => {
         placeholder="search a book"
         onChange={handleChange}
         onKeyDown={handleKeyDown}
+				value={inputValue}
       />
 			{ isLoading ? (
 					<i className="fas fa-solid fa-spinner fa-spin loading-icon" data-testid="loading-icon"></i>

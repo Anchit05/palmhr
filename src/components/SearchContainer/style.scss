@@ -39,6 +39,18 @@
   }
 }
 
+.load-more-cnt{
+	margin: 20px 0;
+	.load-more-btn{
+		background: #1a73e8;
+    border-radius: 4px;
+    color: #fff;
+    padding: 8px 16px;
+    border: transparent;
+    cursor: pointer;
+	}
+}
+
 @media (max-width: 767px) {
   .search-cnt {
     width: 100%;

@@ -7,7 +7,7 @@ describe("Input Component", () => {
   
 	it('InputCnt component renders correctly', () => {
 		const handleBooksSearch = jest.fn();
-		render(<InputCnt handleBooksSearch={handleBooksSearch} isLoading={false} />);
+		render(<InputCnt handleBooksSearch={handleBooksSearch} isLoading={false} searchVal={""} />);
 	
 		// Check if the input field is present
 		expect(screen.getByPlaceholderText('search a book')).toBeInTheDocument();
@@ -18,7 +18,7 @@ describe("Input Component", () => {
 	
 	it('InputCnt component handles input change', () => {
 		const handleBooksSearch = jest.fn();
-		render(<InputCnt handleBooksSearch={handleBooksSearch} isLoading={false} />);
+		render(<InputCnt handleBooksSearch={handleBooksSearch} isLoading={false} searchVal={""} />);
 	
 		const inputElement = screen.getByPlaceholderText('search a book');
 		fireEvent.change(inputElement, { target: { value: 'React' } });
@@ -29,7 +29,7 @@ describe("Input Component", () => {
 	
 	it('InputCnt component handles Enter key press', () => {
 		const handleBooksSearch = jest.fn();
-		render(<InputCnt handleBooksSearch={handleBooksSearch} isLoading={false} />);
+		render(<InputCnt handleBooksSearch={handleBooksSearch} isLoading={false} searchVal={""} />);
 	
 		const inputElement = screen.getByPlaceholderText('search a book');
 		fireEvent.change(inputElement, { target: { value: 'React' } });
@@ -43,7 +43,7 @@ describe("Input Component", () => {
 	
 	it('InputCnt component handles search icon click', () => {
 		const handleBooksSearch = jest.fn();
-		render(<InputCnt handleBooksSearch={handleBooksSearch} isLoading={false} />);
+		render(<InputCnt handleBooksSearch={handleBooksSearch} isLoading={false} searchVal={""} />);
 	
 		const inputElement = screen.getByPlaceholderText('search a book');
 		fireEvent.change(inputElement, { target: { value: 'React' } });
@@ -57,7 +57,7 @@ describe("Input Component", () => {
 	});
 	
 	it('InputCnt component shows loading icon when isLoading is true', () => {
-		render(<InputCnt handleBooksSearch={() => {}} isLoading={true} />);
+		render(<InputCnt handleBooksSearch={() => {}} isLoading={true} searchVal={""} />);
 	
 		// Check if the loading icon is present
 		expect(screen.getByTestId('loading-icon')).toBeInTheDocument();
